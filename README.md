@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/statuspage/statuspage-sdk-php/v/stable.png)](https://packagist.org/packages/statuspage/statuspage-sdk-php)
 
 
-An official SDK for Xsolla statuspage
+A SDK to creat a status page for website using Statuspage.io
 
 ## Requirements
 
@@ -10,6 +10,8 @@ An official SDK for Xsolla statuspage
 * PHP [cURL extension](http://php.net/manual/en/curl.installation.php) with SSL enabled (it's usually built-in).
 
 ## Instalation
+
+The recommended way to install Xsolla SDK for PHP is through [Composer](http://getcomposer.org).
 
 ``` bash
 $ cd /path/to/your/project

@@ -1,12 +1,18 @@
 {
     "name": "statuspage/statuspage-sdk-php",
+    "type": "library",
+    "description":"Statuspage.io helps you to create a status page of your app or website.",
+    "keywords": ["sdk", "api", "statuspage", "status", "monitoring", "metrics"],
+    "homepage": "http://statuspage.io",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Renat Bilalov",
-            "email": "r.bilalov@xsolla.com"
+            "name": "xsolla developers",
+            "email": "support@xsolla.com"
         }
     ],
     "require": {
+        "php": ">=5.3.3",
         "guzzle/http": "~3.8.0"
     },
     "autoload": {
