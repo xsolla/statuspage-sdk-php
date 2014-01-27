@@ -3,6 +3,7 @@ namespace StatusPage\SDK;
 
 use Guzzle\Http\Client as GuzzleClient;
 use StatusPage\SDK\Metrics\MetricsEndpoint;
+use StatusPage\SDK\Subscribers\SubscribersEndpoint;
 
 class Client
 {
@@ -27,5 +28,10 @@ class Client
     public function metrics()
     {
         return new MetricsEndpoint($this);
+    }
+
+    public function subscribers()
+    {
+        return new SubscribersEndpoint($this);
     }
 }
