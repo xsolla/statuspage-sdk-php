@@ -1,0 +1,12 @@
+{
+    "name": "statuspage/statuspage-sdk-php",
+    "authors": [
+        {
+            "name": "Renat Bilalov",
+            "email": "r.bilalov@xsolla.com"
+        }
+    ],
+    "require": {
+        "guzzle/http": "~3.8.0"
+    }
+}
