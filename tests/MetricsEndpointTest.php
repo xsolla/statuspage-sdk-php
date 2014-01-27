@@ -1,5 +1,5 @@
 <?php
-namespace StatusPage\SDK\tests;
+namespace StatusPage\SDK\Tests;
 
 use StatusPage\SDK\Metrics\MetricsEndpoint;
 

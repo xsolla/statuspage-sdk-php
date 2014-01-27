@@ -1,7 +1,7 @@
 <?php
-namespace StatusPage\SDK\tests;
+namespace StatusPage\SDK\Tests;
 
-abstract class EndpointTest extends \PHPUnit_Framework_TestCase
+abstract class EndpointTestCase extends \PHPUnit_Framework_TestCase
 {
     private $clientMock;
 
