@@ -1,11 +1,18 @@
 <?php
-namespace StatusPage\SDK\Tests;
+namespace StatusPage\SDK\tests;
 
 use StatusPage\SDK\Metrics\MetricsEndpoint;
 
 class MetricsEndpointTest extends EndpointTestCase
 {
+    /**
+     * @var MetricsEndpoint
+     */
     private $metrics;
+
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
     private $clientSDKMock;
 
     private $metric_id = 'metric_id';
@@ -33,4 +40,3 @@ class MetricsEndpointTest extends EndpointTestCase
         $this->assertSame($this->data, $this->metrics->submitData($this->metric_id, $this->data['timestamp'], $this->data['value']));
     }
 }
- 

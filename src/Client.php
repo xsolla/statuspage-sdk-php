@@ -3,7 +3,7 @@ namespace StatusPage\SDK;
 
 use Guzzle\Http\Client as GuzzleClient;
 
-class Client 
+class Client
 {
     private $guzzleClient;
 
@@ -19,6 +19,7 @@ class Client
     {
         $request = $this->guzzleClient->createRequest($method, $endpoint, $headers, $body);
         $response = $request->send();
+
         return $response->json();
     }
 }
