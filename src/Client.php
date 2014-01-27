@@ -2,8 +2,10 @@
 namespace StatusPage\SDK;
 
 use Guzzle\Http\Client as GuzzleClient;
+use StatusPage\SDK\Metrics\MetricsEndpoint;
+use StatusPage\SDK\Subscribers\SubscribersEndpoint;
 
-class Client 
+class Client
 {
     private $guzzleClient;
 
@@ -19,6 +21,17 @@ class Client
     {
         $request = $this->guzzleClient->createRequest($method, $endpoint, $headers, $body);
         $response = $request->send();
+
         return $response->json();
+    }
+
+    public function metrics()
+    {
+        return new MetricsEndpoint($this);
+    }
+
+    public function subscribers()
+    {
+        return new SubscribersEndpoint($this);
     }
 }
