@@ -17,7 +17,7 @@ class MetricsEndpointTest extends EndpointTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->clientSDKMock = $this->getMock('\StatusPage\SDK\Client', [], [], '', false);
+        $this->clientSDKMock = $this->getMock('\StatusPage\SDK\Client', array(), array(), '', false);
         $this->metrics = new MetricsEndpoint($this->clientSDKMock);
     }
 

@@ -18,11 +18,7 @@ class Client
     public function send($endpoint, $method = 'GET', $headers = null, $body = null)
     {
         $request = $this->guzzleClient->createRequest($method, $endpoint, $headers, $body);
-      /*  if (in_array($method, array('PUT', 'POST', 'DELETE'))) {
-            $request->setHeader('content-type', 'application/json');
-        }*/
-        //echo ((string) $request);
-       $response = $request->send();
+        $response = $request->send();
         return $response->json();
     }
 }
