@@ -5,19 +5,14 @@ use Guzzle\Http\Client as GuzzleClient;
 
 class Client 
 {
-    private $pageId;
     private $guzzleClient;
-    private $secretKey;
 
     public function __construct(GuzzleClient $guzzleClient, $pageId, $secretKey)
     {
         $this->guzzleClient = $guzzleClient;
-        $this->guzzleClient->setBaseUrl('https://api.statuspage.io/v1');
+        $this->guzzleClient->setBaseUrl('https://api.statuspage.io/v1/pages/'.$pageId.'/');
         $this->guzzleClient->setDefaultOption('headers', array('Authorization' => 'OAuth '.$secretKey));
-
-        $this->pageId = $pageId;
-        $this->secretKey = $secretKey;
-
+        $this->guzzleClient->setUserAgent('statuspage-sdk-php/1.0');
     }
 
     public function send($endpoint, $method = 'GET', $headers = null, $body = null)

@@ -3,7 +3,7 @@ namespace StatusPage\SDK;
 
 abstract class Endpoint
 {
-    private $client;
+    protected  $client;
 
     public function __construct(Client $client)
     {
