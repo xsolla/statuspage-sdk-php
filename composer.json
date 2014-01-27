@@ -8,5 +8,11 @@
     ],
     "require": {
         "guzzle/http": "~3.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StatusPage\\SDK\\": "src",
+            "StatusPage\\SDK\\Tests\\": "tests"
+        }
     }
 }
