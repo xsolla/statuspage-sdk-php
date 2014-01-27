@@ -17,7 +17,7 @@ class MetricsEndpointTest extends EndpointTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->clientSDKMock = $this->getMock('\StatusPage\SDK\Client', [], [], '', false);
+        $this->clientSDKMock = $this->getMock('\StatusPage\SDK\Client', array(), array(), '', false);
         $this->metrics = new MetricsEndpoint($this->clientSDKMock);
     }
 
@@ -31,6 +31,17 @@ class MetricsEndpointTest extends EndpointTestCase
             ->will($this->returnValue($this->data));
 
         $this->assertSame($this->data, $this->metrics->submitData($this->metric_id, $this->data['timestamp'], $this->data['value']));
+    }
+
+    public function testDeleteData()
+    {
+        $this->clientSDKMock->expects($this->once())->method('send')
+            ->with('metrics/'.$this->metric_id.'/data.json',
+                'DELETE',
+                null,
+                null);
+
+        $this->metrics->deleteData($this->metric_id);
     }
 }
  

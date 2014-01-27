@@ -18,4 +18,15 @@ class MetricsEndpoint extends Endpoint{
         $result = $this->client->send('metrics/'.$metric_id.'/data.json','POST', null, $data);
         return $result;
     }
+
+    public function deleteData($metric_id)
+    {
+        $result = $this->client->send('metrics/'.$metric_id.'/data.json','DELETE', null, null);
+        return $result;
+    }
+
+    public function createMetric($params)
+    {
+        $data = array();
+    }
 }
