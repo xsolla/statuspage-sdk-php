@@ -17,7 +17,7 @@ The recommended way to install StatusPage SDK for PHP is through [Composer](http
 
 ``` bash
 $ cd /path/to/your/project
-$ composer require statuspage/statuspage-sdk-php:~1.0
+$ composer require statuspage/statuspage-sdk-php:~0.1
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ $client = new Client(new GuzzleClient, 'YOUR_PAGE_ID', 'YOUR_SECRET_KEY');
 $subscriber = new Subscriber;
 $subscriber->setEmail('example@example.com');
 
-$client->subscriptions()->addSubscriber($subscriber);
+$client->subscribers()->addSubscriber($subscriber);
 
 ```
 

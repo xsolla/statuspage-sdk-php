@@ -48,7 +48,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertAttributeSame($this->statusPageClient, 'client', $metricsEndpoint);
     }
 
-    public function testSubscriptions()
+    public function testSubscribers()
     {
         $subscribersEndpoint = $this->statusPageClient->subscribers();
         $this->assertInstanceOf('StatusPage\SDK\Subscribers\SubscribersEndpoint', $subscribersEndpoint);
