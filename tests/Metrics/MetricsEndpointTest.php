@@ -1,7 +1,8 @@
 <?php
-namespace StatusPage\SDK\Tests;
+namespace StatusPage\SDK\tests\Metrics;
 
 use StatusPage\SDK\Metrics\MetricsEndpoint;
+use StatusPage\SDK\Tests\EndpointTestCase;
 
 class MetricsEndpointTest extends EndpointTestCase
 {
@@ -9,11 +10,6 @@ class MetricsEndpointTest extends EndpointTestCase
      * @var MetricsEndpoint
      */
     private $metrics;
-
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
-     */
-    private $clientSDKMock;
 
     private $metric_id = 'metric_id';
     private $data = array(
@@ -24,17 +20,16 @@ class MetricsEndpointTest extends EndpointTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->clientSDKMock = $this->getMock('\StatusPage\SDK\Client', array(), array(), '', false);
-        $this->metrics = new MetricsEndpoint($this->clientSDKMock);
+        $this->metrics = new MetricsEndpoint($this->clientMock);
     }
 
     public function testSubmitData()
     {
-        $this->clientSDKMock->expects($this->once())->method('send')
-            ->with('metrics/'.$this->metric_id.'/data.json',
+        $this->clientMock->expects($this->once())->method('send')
+            ->with("metrics/{$this->metric_id}/data.json",
                'POST',
                null,
-               array('data'=>$this->data))
+               array('data' => $this->data))
             ->will($this->returnValue($this->data));
 
         $this->assertSame($this->data, $this->metrics->submitData($this->metric_id, $this->data['timestamp'], $this->data['value']));

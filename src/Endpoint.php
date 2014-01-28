@@ -9,5 +9,4 @@ abstract class Endpoint
     {
         $this->client = $client;
     }
-
 }

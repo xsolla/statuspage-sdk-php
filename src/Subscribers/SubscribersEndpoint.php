@@ -3,14 +3,10 @@ namespace StatusPage\SDK\Subscribers;
 
 use StatusPage\SDK\Endpoint;
 
-use Guzzle\Http\Client as GuzzleClient;
-
 class SubscribersEndpoint extends Endpoint
 {
-
     public function addSubscriber(Subscriber $subscriber)
     {
-
         $body = array();
 
         $email = $subscriber->getEmail();

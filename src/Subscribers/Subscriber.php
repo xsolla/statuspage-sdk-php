@@ -6,16 +6,9 @@ class Subscriber
     protected $email;
     protected $phone_number;
     protected $phone_country;
-    protected $endpoint;
-    protected $skip_confirmation_notification;
-
-    public function __construct()
-    {
-    
-    }
 
     /**
-     * @param mixed $email
+     * @param string $email
      */
     public function setEmail($email)
     {
@@ -23,7 +16,7 @@ class Subscriber
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEmail()
     {
@@ -31,23 +24,7 @@ class Subscriber
     }
 
     /**
-     * @param mixed $endpoint
-     */
-    public function setEndpoint($endpoint)
-    {
-        $this->endpoint = $endpoint;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEndpoint()
-    {
-        return $this->endpoint;
-    }
-
-    /**
-     * @param mixed $phone_country
+     * @param string $phone_country
      */
     public function setPhoneCountry($phone_country)
     {
@@ -55,7 +32,7 @@ class Subscriber
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getPhoneCountry()
     {
@@ -77,22 +54,4 @@ class Subscriber
     {
         return $this->phone_number;
     }
-
-    /**
-     * @param mixed $skip_confirmation_notification
-     */
-    public function setSkipConfirmationNotification($skip_confirmation_notification)
-    {
-        $this->skip_confirmation_notification = $skip_confirmation_notification;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSkipConfirmationNotification()
-    {
-        return $this->skip_confirmation_notification;
-    }
-
-
 }

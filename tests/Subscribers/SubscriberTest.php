@@ -1,5 +1,5 @@
 <?php
-namespace StatusPage\SDK\Tests\Subscribers;
+namespace StatusPage\SDK\tests\Subscribers;
 
 use StatusPage\SDK\Subscribers\Subscriber;
 
@@ -19,7 +19,7 @@ class SubscriberTest extends \PHPUnit_Framework_TestCase
     {
         $this->subscriber = new Subscriber();
     }
-    
+
     public function testAll()
     {
         $this->assertNull($this->subscriber->getEmail());

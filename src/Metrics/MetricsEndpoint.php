@@ -15,7 +15,7 @@ class MetricsEndpoint extends Endpoint
             )
         );
 
-        $result = $this->client->send('metrics/'.$metric_id.'/data.json','POST', null, $data);
+        $result = $this->client->send("metrics/$metric_id/data.json",'POST', null, $data);
 
         return $result;
     }

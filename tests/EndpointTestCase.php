@@ -1,9 +1,12 @@
 <?php
-namespace StatusPage\SDK\Tests;
+namespace StatusPage\SDK\tests;
 
 abstract class EndpointTestCase extends \PHPUnit_Framework_TestCase
 {
-    private $clientMock;
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
+    protected $clientMock;
 
     public function setUp()
     {
