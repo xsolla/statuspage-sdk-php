@@ -8,6 +8,8 @@ use StatusPage\SDK\Subscribers\SubscribersEndpoint;
 
 class Client
 {
+    const VERSION = '0.1';
+
     protected $guzzleClient;
 
     public function __construct(GuzzleClient $guzzleClient, $pageId, $token)
@@ -16,9 +18,10 @@ class Client
         $this->guzzleClient->setBaseUrl("https://api.statuspage.io/v1/pages/$pageId/");
         $this->guzzleClient->setDefaultOption('headers', array('Authorization' => 'OAuth '.$token));
         $this->guzzleClient->setUserAgent(sprintf(
-            'statuspage-sdk-php/1.0 curl/%s PHP/%s',
-                CurlVersion::getInstance()->get('version'),
-                PHP_VERSION
+            'statuspage-sdk-php/%s curl/%s PHP/%s',
+            self::VERSION,
+            CurlVersion::getInstance()->get('version'),
+            PHP_VERSION
         ));
     }
 

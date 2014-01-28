@@ -34,7 +34,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('setUserAgent')
             ->with($this->logicalAnd(
-                $this->stringContains('statuspage-sdk-php/1.0'),
+                $this->stringContains('statuspage-sdk-php/'.Client::VERSION),
                 $this->stringContains(CurlVersion::getInstance()->get('version')),
                 $this->stringContains(PHP_VERSION)
             ));
