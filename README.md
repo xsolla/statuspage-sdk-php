@@ -11,7 +11,7 @@ A PHP SDK for StatusPage.io
 * PHP 5.3.3+
 * PHP [cURL extension](http://php.net/manual/en/curl.installation.php) with SSL enabled (it's usually built-in).
 
-## Instalation
+## Installation
 
 The recommended way to install StatusPage SDK for PHP is through [Composer](http://getcomposer.org).
 
